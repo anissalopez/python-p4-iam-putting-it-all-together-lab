@@ -15,7 +15,7 @@ class User(db.Model, SerializerMixin):
     _password_hash = db.Column(db.String)
     bio = db.Column(db.String)
     image_url = db.Column(db.String)
-    recipes = db.Relationship('Recipe', back_populates='user')
+    recipes = db.relationship('Recipe', back_populates='user')
     serialize_rules = ('-recipes.user',)
 
   
